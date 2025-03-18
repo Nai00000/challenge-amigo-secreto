@@ -22,3 +22,20 @@ function adicionarAmigo() {
     }
     inputElement.value = '';
 }
+function sortearAmigo() {
+    if(amigos.length == '') {
+        alert('Você precisa adicionar amigos!');
+    } 
+    else 
+    {
+        const listElement = document.getElementById('resultado');
+        listElement.innerHTML = "";
+
+        const indexAleatorio = Math.floor(Math.random() * amigos.length);
+
+        const itemElement = document.createElement('li');
+        itemElement.innerHTML = "O amigo secreto sorteado é: " + amigos[indexAleatorio];
+        listElement.appendChild(itemElement);
+    }
+    
+}
